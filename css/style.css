@@ -1,14 +1,44 @@
 .pet{
-  width: 75px;
-  height: 75px;
+  width: 100px;
+  height: 100px;
   border-radius: 10px;
+  
+}
+h1{
+    color: green;
+}
 
+.hunger{
+  color: green;
+}
+
+.sleepiness{
+  color: green;
+}
+
+.boredom{
+  color: green;
+}
+.age{
+  color: green;
 }
 
 body{
-  background-color: teal;
+  background-image: url('https://64.media.tumblr.com/c4ef683055d8fc8e5517cdc221a7d57a/d3238a119a00c682-b9/s1280x1920/324855e88fa138547b29b3f87200161526dc2356.png');
+  background-size: 100%;
+  background-position: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
 }
 
 html{
   text-align: center;
+}
+.wolfie{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
