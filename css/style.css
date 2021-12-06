@@ -1,0 +1,14 @@
+.pet{
+  width: 75px;
+  height: 75px;
+  border-radius: 10px;
+
+}
+
+body{
+  background-color: teal;
+}
+
+html{
+  text-align: center;
+}
