@@ -18,3 +18,9 @@ class Wolfie extends Pet {
 }
 
 const wolfie = new Wolfie('.Wolfie')
+
+let hungerButton = document.querySelector('.feedButton')
+
+hungerButton.addEventListener('click', () =>{
+  
+})
