@@ -21,6 +21,14 @@ class Wolfie extends Pet {
   feed(){
     this.hunger++
   }
+
+  sleep(){
+    this.sleepiness++
+  }
+
+  play(){
+    this.boredom++
+  }
 }
 
 let hungerButton = document.querySelector('.feedButton')
@@ -70,28 +78,27 @@ const game = {
           })
       },
       setSleepiness(){
-          const intervalID = setInterval(() => {
-            const sleepinessID = document.querySelector('.sleepiness');
-            sleepinessID.innerText = ` ${wolfie.sleepiness}`;
-            // decrement sleepiness
-            wolfie.sleepiness--
-            sleepinessButton.addEventListener('click', () =>{
-                wolfie.sleepiness++
-                console.log(wolfie.sleepiness);
-                document.body.style.backgroundImage = "url('https://cutewallpaper.org/21/pixel-stars-background/night-nighttime-stars-clouds-background-pixel-pixel-bac.png')";
-                document.querySelector('.pet').src = ('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTynq9Rj_tz0RJByVWNcKmhppzXA6e2uvs4Cg&usqp=CAU')
-                const pet = document.querySelector('.pet')
-            })
-            if(this.sleepiness <= 0){
-              alert('Your pet died from lack of rest')
-              //update image to dead wolf or game of thrones red wedding
-              document.querySelector('.pet').src = ('https://media0.giphy.com/media/3oEjHJYwFLAPyMx128/giphy.gif?cid=ecf05e47gbw11mmxpf2b6p4c7fovz8khp40mat33tb7xwh2h&rid=giphy.gif&ct=g')
+        const intervalID = setInterval(() => {
+          const sleepinessID = document.querySelector('.sleepiness');
+          sleepinessID.innerText = ` ${wolfie.sleepiness}`;
+          // decrement hunger
+          wolfie.sleepiness--
+          if(wolfie.sleepiness <= 0){
+            alert('Your pet died from starvation')
+            document.querySelector('.pet').src = ('https://media0.giphy.com/media/3oEjHJYwFLAPyMx128/giphy.gif?cid=ecf05e47gbw11mmxpf2b6p4c7fovz8khp40mat33tb7xwh2h&rid=giphy.gif&ct=g')
+            clearInterval(intervalID);
+            document.querySelector('button').disabled = false;
+            return;
+          }
+        }, 1000)
+          sleepinessButton.addEventListener('click', () =>{
+              wolfie.sleep();
+              console.log(wolfie.sleepiness);
+              document.body.style.backgroundImage = "url('https://cutewallpaper.org/21/pixel-stars-background/night-nighttime-stars-clouds-background-pixel-pixel-bac.png')";
+              document.querySelector('.pet').src = ('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTynq9Rj_tz0RJByVWNcKmhppzXA6e2uvs4Cg&usqp=CAU')
+              const pet = document.querySelector('.pet')
+          })
 
-              clearInterval(intervalID);
-              document.querySelector('button').disabled = false;
-              return;
-            }
-          }, 5000)
         },
         setBoredom(){
           const intervalID = setInterval(() => {
@@ -99,11 +106,7 @@ const game = {
             boredomID.innerText = ` ${wolfie.boredom}`;
             // decrement boredom
             wolfie.boredom--
-            boredomButton.addEventListener('click', () =>{
-                wolfie.boredom++
-                document.body.style.backgroundImage = "url('https://64.media.tumblr.com/c4ef683055d8fc8e5517cdc221a7d57a/d3238a119a00c682-b9/s1280x1920/324855e88fa138547b29b3f87200161526dc2356.png')"
-                document.querySelector('.pet').src = ('https://i.imgur.com/RHnnBBA.png')
-              })
+
             if(wolfie.boredom <= 0){
               alert('Your pet died from an insane amount of boredom')
               document.querySelector('.pet').src = ('https://media0.giphy.com/media/3oEjHJYwFLAPyMx128/giphy.gif?cid=ecf05e47gbw11mmxpf2b6p4c7fovz8khp40mat33tb7xwh2h&rid=giphy.gif&ct=g')
@@ -112,7 +115,12 @@ const game = {
               document.querySelector('button').disabled = false;
               return;
             }
-          }, 5000)
+          }, 1000)
+          playButton.addEventListener('click', () =>{
+              wolfie.play();
+              document.body.style.backgroundImage = "url('https://64.media.tumblr.com/c4ef683055d8fc8e5517cdc221a7d57a/d3238a119a00c682-b9/s1280x1920/324855e88fa138547b29b3f87200161526dc2356.png')"
+              document.querySelector('.pet').src = ('https://i.imgur.com/RHnnBBA.png')
+            })
         },
 
           setAge(){
@@ -122,6 +130,10 @@ const game = {
               // increment age
               wolfie.age++
           }, 7000)
+          if(wolfie.boredom || wolfie.sleepiness || wolfie.hunger){
+            clearInterval(intervalID);
+            return;
+          }
         },
 
           setName(){
@@ -150,8 +162,8 @@ const game = {
       this.setHunger()
       this.setBoredom()
       this.setSleepiness()
-      this.setAge()
       this.secondForm()
+      this.setAge()
   }
 
 }

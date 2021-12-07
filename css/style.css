@@ -1,35 +1,81 @@
+.stats{
+  /* display:inline-flex; */
+}
+
 .pet{
   width: 130px;
   height: 130px;
   border-radius: 10px;
-  /* width: 100px;
-  height: 100px; */
   position: relative;
+  animation: mymove 5s infinite;
+  animation-timing-function: linear;
+  animation: fadein 6s;
+  animation-name: rotate;
+  animation-duration: 5s;
+  animation-direction: reverse;
+  }
+  .pet{
+    font-weight: strong;
+    font-size: 28px;
+    animation-name: rotate;
+    animation-duration: 5s;
+    animation-direction: reverse;
+  }
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 
-  animation-name: none;
-  animation-duration: 4s;
-  animation-iteration-count: 2;
-  animation-direction: alternate;
-
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
-h1{
-    color: Black;
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+h1,.name{
+    animation-duration: 6s;
+    animation-name: slidein;
+    font-size: 65px;
+    text-shadow: 5px 5px 0 #714D30;
+    /* background-color: white; */
 }
 
 .hunger{
   color: black;
-  text-size: 200px;
+  font-size: 30px;
 }
 
 .sleepiness{
   color: black;
+  font-size: 30px;
 }
 
 .boredom{
   color: black;
+  font-size: 30px;
 }
 .age{
   color: black;
+  font-size: 30px;
 }
 
 body{
@@ -47,11 +93,27 @@ html{
 }
 .wolfie{
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: relative;
+  margin-right: relative;
   width: 50%;
 }
 
-.name{
-  font-size: 50px;
+.buttonBegin{
+  font-size: 30px
+}
+
+.feedButton{
+  display:inline;
+  font-size: 20px
+
+}
+
+.playButton{
+  display:inline;
+  font-size: 20px
+}
+
+.sleepButton{
+  display:inline;
+  font-size: 20px
 }
