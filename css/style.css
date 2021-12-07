@@ -1,26 +1,35 @@
 .pet{
-  width: 100px;
-  height: 100px;
+  width: 130px;
+  height: 130px;
   border-radius: 10px;
-  
+  /* width: 100px;
+  height: 100px; */
+  position: relative;
+
+  animation-name: none;
+  animation-duration: 4s;
+  animation-iteration-count: 2;
+  animation-direction: alternate;
+
 }
 h1{
-    color: green;
+    color: Black;
 }
 
 .hunger{
-  color: green;
+  color: black;
+  text-size: 200px;
 }
 
 .sleepiness{
-  color: green;
+  color: black;
 }
 
 .boredom{
-  color: green;
+  color: black;
 }
 .age{
-  color: green;
+  color: black;
 }
 
 body{
@@ -41,4 +50,8 @@ html{
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+}
+
+.name{
+  font-size: 50px;
 }
