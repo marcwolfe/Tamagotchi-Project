@@ -28,7 +28,25 @@ class Wolfie extends Pet {
 
   play(){
     this.boredom++
+    this.myMove()
   }
+
+  myMove(){
+    var id = null;
+    var elem = document.querySelector(".pet");
+    var pos = 0;
+    clearInterval(id);
+    id = setInterval(frame, 10);
+    function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++;
+      elem.style.top = pos + 'px';
+      elem.style.left = pos + 'px';
+    }
+  }
+}
 }
 
 let hungerButton = document.querySelector('.feedButton')
@@ -77,7 +95,7 @@ const game = {
             wolfie.feed();
             console.log(wolfie.hunger);
             document.body.style.backgroundImage = "url('https://64.media.tumblr.com/c4ef683055d8fc8e5517cdc221a7d57a/d3238a119a00c682-b9/s1280x1920/324855e88fa138547b29b3f87200161526dc2356.png')"
-            document.querySelector('.pet').src = ('https://i.imgur.com/RHnnBBA.png')
+            // document.querySelector('.pet').src = ('https://i.imgur.com/RHnnBBA.png')
           })
       },
       setSleepiness(){
@@ -88,7 +106,6 @@ const game = {
           wolfie.sleepiness--
           if(wolfie.sleepiness === 0){
             alert('Your pet died from starvation')
-            document.querySelector('.pet').src = ('https://media0.giphy.com/media/3oEjHJYwFLAPyMx128/giphy.gif?cid=ecf05e47gbw11mmxpf2b6p4c7fovz8khp40mat33tb7xwh2h&rid=giphy.gif&ct=g')
             clearInterval(intervalID);
             document.querySelector('button').disabled = false;
             return;
@@ -97,8 +114,7 @@ const game = {
           sleepinessButton.addEventListener('click', () =>{
               wolfie.sleep();
               console.log(wolfie.sleepiness);
-              document.body.style.backgroundImage = "url('https://cutewallpaper.org/21/pixel-stars-background/night-nighttime-stars-clouds-background-pixel-pixel-bac.png')";
-              document.querySelector('.pet').src = ('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTynq9Rj_tz0RJByVWNcKmhppzXA6e2uvs4Cg&usqp=CAU')
+              document.body.style.backgroundImage = "url('/Users/wolfe/sei-anemone/homeworks/Tamagotchi/js/images/NightTime Tamagotchi.png')";
               const pet = document.querySelector('.pet')
           })
 
@@ -113,7 +129,6 @@ const game = {
             if(wolfie.boredom === 0){
               alert('Your pet died from an insane amount of boredom')
               document.querySelector('.pet').src = ('https://media0.giphy.com/media/3oEjHJYwFLAPyMx128/giphy.gif?cid=ecf05e47gbw11mmxpf2b6p4c7fovz8khp40mat33tb7xwh2h&rid=giphy.gif&ct=g')
-
               clearInterval(intervalID);
               document.querySelector('button').disabled = false;
               return;
@@ -121,8 +136,8 @@ const game = {
           }, 5000)
           playButton.addEventListener('click', () =>{
               wolfie.play();
-              document.body.style.backgroundImage = "url('https://64.media.tumblr.com/c4ef683055d8fc8e5517cdc221a7d57a/d3238a119a00c682-b9/s1280x1920/324855e88fa138547b29b3f87200161526dc2356.png')"
-              document.querySelector('.pet').src = ('https://i.imgur.com/RHnnBBA.png')
+              document.body.style.backgroundImage = "url('/Users/wolfe/sei-anemone/homeworks/Tamagotchi/js/images/Day time tamagotchi.png')"
+              // document.querySelector('.pet').src = ('https://i.imgur.com/RHnnBBA.png')
             })
         },
 
@@ -132,16 +147,17 @@ const game = {
               ageID.innerText = ` ${wolfie.age}`;
               // increment age
               wolfie.age++
-              if(wolfie.age == 3){
+              if(wolfie.age == 5){
                 alert('Your pet has gained a new form!!!!')
                 document.querySelector('.pet').src = ('/Users/wolfe/sei-anemone/homeworks/Tamagotchi/js/images/imgbin-gray-wolf-drawing-cartoon-sketch-others-t8T5hfXYL3d9xgka0JjkyGsxZ.png')
               }
-              if(wolfie.age == 5){
-                alert('Your pet has gained another new form!!!!')
-                document.querySelector('.pet').src = ('https://w7.pngwing.com/pngs/595/697/png-transparent-black-wolf-illustration-wolfdog-panthera-deer-drawing-wolf-animals-dog-like-mammal-wolf.png')
-              }
 
-          }, 1000)
+              
+              if(wolfie.age == 14){
+                alert('Your pet has hit its final form!!!!')
+                document.querySelector('.pet').src = ('/Users/wolfe/sei-anemone/homeworks/Tamagotchi/js/images/pngwing.com copy.png')
+              }
+          }, 4000)
         },
 
           setName(){
@@ -150,22 +166,13 @@ const game = {
           nameID.innerText = `${this.name}`
         },
 
-        secondForm(){
-          if(wolfie.age === 2){
-            alert('Your pet has gained a new form!!!!')
-            document.querySelector('.pet').src = ('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3aYIOlaCxs0Vn2ziEJVtrtKlS-lt4xFutOw&usqp=CAU')
-          }
-        },
-
-        thirdForm(){
-          if(wolfie.age === 5){
-            alert('Your pet has gained another new form!!!!')
-            document.querySelector('.pet').src = ('https://w7.pngwing.com/pngs/595/697/png-transparent-black-wolf-illustration-wolfdog-panthera-deer-drawing-wolf-animals-dog-like-mammal-wolf.png')
-          }
-        },
-
-
     startGame() {
+      alert("Welcome to Marc Wolfe's Tomagatchi Game!")
+      alert("The rules are as follows. You have three stats to worry about for now and those are Hunger, Boredom, and Sleepiness")
+      alert("These three stats are set to 10 which means full and the lower they go your pet gets closer to death")
+      alert("If you want your pet to survive and experience different forms of life you must not allow the stats to get to 0")
+      alert("To increase a certain stat there are three buttons to choose from. DOUBLECLICK whichever button you need to increase the stat by 1")
+      alert('Thats all the help you get, enjoy the game!')
       this.setName()
       this.setHunger()
       this.setBoredom()
@@ -175,10 +182,9 @@ const game = {
 
 }
 
-
-
-
 buttonBegin.addEventListener("click", (event)=>{
   event.target.disabled = true;
   game.startGame();
 })
+
+let id = null;
