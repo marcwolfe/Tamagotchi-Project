@@ -31,22 +31,22 @@ class Wolfie extends Pet {
     this.myMove()
   }
 
-  myMove(){
-    var id = null;
-    var elem = document.querySelector(".pet");
-    var pos = 0;
-    clearInterval(id);
-    id = setInterval(frame, 10);
-    function frame() {
-    if (pos == 350) {
-      clearInterval(id);
-    } else {
-      pos++;
-      elem.style.top = pos + 'px';
-      elem.style.left = pos + 'px';
-    }
-  }
-}
+//   myMove(){
+//     var id = null;
+//     var elem = document.querySelector(".pet");
+//     var pos = 0;
+//     clearInterval(id);
+//     id = setInterval(frame, 10);
+//     function frame() {
+//     if (pos == 350) {
+//       clearInterval(id);
+//     } else {
+//       pos++;
+//       elem.style.top = pos + 'px';
+//       elem.style.left = pos + 'px';
+//     }
+//   }
+// }
 }
 
 let hungerButton = document.querySelector('.feedButton')
@@ -57,6 +57,9 @@ let sleepinessCounter = document.querySelector('.sleepiness')
 
 let boredomButton = document.querySelector('.boredomButton')
 let boredomCounter = document.querySelector('.boredom')
+
+const removeStats = document.querySelector('.stats')
+const removeStart = document.querySelector('.buttonBegin')
 
 
 buttonBegin = document.querySelector('button');
@@ -84,6 +87,8 @@ const game = {
             alert('Your pet died from starvation')
             // document.querySelector('.title') = 'work'
             // document.querySelector('.name') = 'work'
+            removeStats.remove()
+            removeStart.remove()
             document.querySelector('.pet').src = ('https://media0.giphy.com/media/3oEjHJYwFLAPyMx128/giphy.gif?cid=ecf05e47gbw11mmxpf2b6p4c7fovz8khp40mat33tb7xwh2h&rid=giphy.gif&ct=g')
             document.body.style.backgroundImage =
             clearInterval(intervalID);
@@ -106,6 +111,8 @@ const game = {
           wolfie.sleepiness--
           if(wolfie.sleepiness === 0){
             alert('Your pet died from starvation')
+            removeStats.remove()
+            removeStart.remove()
             clearInterval(intervalID);
             document.querySelector('button').disabled = false;
             return;
@@ -128,6 +135,8 @@ const game = {
 
             if(wolfie.boredom === 0){
               alert('Your pet died from an insane amount of boredom')
+              removeStats.remove()
+              removeStart.remove()
               document.querySelector('.pet').src = ('https://media0.giphy.com/media/3oEjHJYwFLAPyMx128/giphy.gif?cid=ecf05e47gbw11mmxpf2b6p4c7fovz8khp40mat33tb7xwh2h&rid=giphy.gif&ct=g')
               clearInterval(intervalID);
               document.querySelector('button').disabled = false;
