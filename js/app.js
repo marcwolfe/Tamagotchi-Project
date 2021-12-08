@@ -90,7 +90,7 @@ const game = {
             document.querySelector('button').disabled = false;
             return;
           }
-        }, 5000)
+        }, 7000)
         hungerButton.addEventListener('click', () =>{
             wolfie.feed();
             console.log(wolfie.hunger);
@@ -110,7 +110,7 @@ const game = {
             document.querySelector('button').disabled = false;
             return;
           }
-        }, 5000)
+        }, 7000)
           sleepinessButton.addEventListener('click', () =>{
               wolfie.sleep();
               console.log(wolfie.sleepiness);
@@ -133,7 +133,7 @@ const game = {
               document.querySelector('button').disabled = false;
               return;
             }
-          }, 5000)
+          }, 7000)
           playButton.addEventListener('click', () =>{
               wolfie.play();
               document.body.style.backgroundImage = "url('/Users/wolfe/sei-anemone/homeworks/Tamagotchi/js/images/Day time tamagotchi.png')"
@@ -152,12 +152,11 @@ const game = {
                 document.querySelector('.pet').src = ('/Users/wolfe/sei-anemone/homeworks/Tamagotchi/js/images/imgbin-gray-wolf-drawing-cartoon-sketch-others-t8T5hfXYL3d9xgka0JjkyGsxZ.png')
               }
 
-              
               if(wolfie.age == 14){
                 alert('Your pet has hit its final form!!!!')
                 document.querySelector('.pet').src = ('/Users/wolfe/sei-anemone/homeworks/Tamagotchi/js/images/pngwing.com copy.png')
               }
-          }, 4000)
+          }, 6000)
         },
 
           setName(){
@@ -186,5 +185,3 @@ buttonBegin.addEventListener("click", (event)=>{
   event.target.disabled = true;
   game.startGame();
 })
-
-let id = null;
