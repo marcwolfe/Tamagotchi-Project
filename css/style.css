@@ -1,24 +1,44 @@
 .stats{
-  /* display:inline-flex; */
+   /* display:inline-flex;  */
 }
 
+ .wolfie{
+  animation-duration: 3s;
+  animation-name: slidein;
+  width: 100px;
+  height: 100px;
+  font-size: 10px;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+
 .pet{
-  width: 130px;
-  height: 130px;
-  border-radius: 10px;
-  position: relative;
+  width: 125px;
+  height: 125px;
+  border-radius: 0px;
   animation: mymove 5s infinite;
   animation-timing-function: linear;
-  animation: fadein 6s;
+  animation: fadein 20s;
   animation-name: rotate;
   animation-duration: 5s;
   animation-direction: reverse;
   }
   .pet{
     font-weight: strong;
-    font-size: 28px;
+    font-size: 30px;
     animation-name: rotate;
-    animation-duration: 5s;
+    animation-duration: 10s;
     animation-direction: reverse;
   }
   @keyframes fadein {
@@ -54,7 +74,7 @@
 h1,.name{
     animation-duration: 6s;
     animation-name: slidein;
-    font-size: 65px;
+    font-size: 50px;
     text-shadow: 5px 5px 0 #714D30;
     /* background-color: white; */
 }
@@ -95,25 +115,42 @@ html{
   display: block;
   margin-left: relative;
   margin-right: relative;
-  width: 50%;
+  width: 95%;
 }
 
 .buttonBegin{
-  font-size: 30px
+  font-size: 30px;
+  background-color: #714D30
 }
 
 .feedButton{
   display:inline;
-  font-size: 20px
-
+  font-size: 14px;
 }
 
 .playButton{
   display:inline;
-  font-size: 20px
+  font-size: 14px;
+
 }
 
 .sleepButton{
   display:inline;
-  font-size: 20px
+  font-size: 14px;
+}
+
+.hungerWord{
+  font-size: 25px;
+}
+
+.boredomWord{
+  font-size: 25px;
+}
+
+.sleepWord{
+  font-size: 25px;
+}
+
+.ageWord{
+  font-size: 25px;
 }
