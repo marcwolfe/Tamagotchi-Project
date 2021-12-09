@@ -54,12 +54,6 @@ const wolfie = new Wolfie('.Wolfie')
 
 const game = {
 
-    // name: wolfie.name,
-    // hunger: wolfie.hunger,
-    // sleepiness: wolfie.sleepiness,
-    // boredom: wolfie.boredom,
-    // age: wolfie.age,
-
     setHunger(){
         const intervalID = setInterval(() => {
           const hungerID = document.querySelector('.hunger');
@@ -68,8 +62,6 @@ const game = {
           wolfie.hunger--
           if(wolfie.hunger === 0){
             alert('Your pet died from starvation')
-            // document.querySelector('.title') = 'work'
-            // document.querySelector('.name') = 'work'
             removeStats.remove()
             removeStart.remove()
             document.querySelector('.pet').src = ('https://media0.giphy.com/media/3oEjHJYwFLAPyMx128/giphy.gif?cid=ecf05e47gbw11mmxpf2b6p4c7fovz8khp40mat33tb7xwh2h&rid=giphy.gif&ct=g')
@@ -82,8 +74,7 @@ const game = {
         hungerButton.addEventListener('click', () =>{
             wolfie.feed();
             console.log(wolfie.hunger);
-            document.body.style.backgroundImage = "url('https://64.media.tumblr.com/c4ef683055d8fc8e5517cdc221a7d57a/d3238a119a00c682-b9/s1280x1920/324855e88fa138547b29b3f87200161526dc2356.png')"
-            // document.querySelector('.pet').src = ('https://i.imgur.com/RHnnBBA.png')
+            document.body.style.backgroundImage = "url('https://64.media.tumblr.com/c4ef683055d8fc8e5517cdc221a7d57a/d3238a119a00c682-b9/s1280x1920/324855e88fa138547b29b3f87200161526dc2356.jpg')"
           })
       },
       setSleepiness(){
@@ -104,7 +95,7 @@ const game = {
           sleepinessButton.addEventListener('click', () =>{
               wolfie.sleep();
               console.log(wolfie.sleepiness);
-              document.body.style.backgroundImage = "url('/Users/wolfe/sei-anemone/homeworks/Tamagotchi/js/images/NightTime Tamagotchi.png')";
+              document.body.style.backgroundImage = "url('/Users/wolfe/sei-anemone/homeworks/Tamagotchi/js/images/NightTime Tamagotchi.jpg')";
               const pet = document.querySelector('.pet')
           })
 
@@ -128,8 +119,7 @@ const game = {
           }, 7000)
           playButton.addEventListener('click', () =>{
               wolfie.play();
-              document.body.style.backgroundImage = "url('/Users/wolfe/sei-anemone/homeworks/Tamagotchi/js/images/Day time tamagotchi.png')"
-              // document.querySelector('.pet').src = ('https://i.imgur.com/RHnnBBA.png')
+              document.body.style.backgroundImage = "url('/Users/wolfe/sei-anemone/homeworks/Tamagotchi/js/images/Day time tamagotchi.jpg')"
             })
         },
 
@@ -141,12 +131,12 @@ const game = {
               wolfie.age++
               if(wolfie.age == 5){
                 alert('Your pet has gained a new form!!!!')
-                document.querySelector('.pet').src = ('/Users/wolfe/sei-anemone/homeworks/Tamagotchi/js/images/imgbin-gray-wolf-drawing-cartoon-sketch-others-t8T5hfXYL3d9xgka0JjkyGsxZ.png')
+                document.querySelector('.pet').src = ('/Users/wolfe/sei-anemone/homeworks/Tamagotchi/js/images/imgbin-gray-wolf-drawing-cartoon-sketch-others-t8T5hfXYL3d9xgka0JjkyGsxZ.jpg')
               }
 
               if(wolfie.age == 14){
                 alert('Your pet has hit its final form!!!!')
-                document.querySelector('.pet').src = ('/Users/wolfe/sei-anemone/homeworks/Tamagotchi/js/images/pngwing.com copy.png')
+                document.querySelector('.pet').src = ('/Users/wolfe/sei-anemone/homeworks/Tamagotchi/js/images/pngwing.com copy.jpg')
               }
           }, 6000)
         },
