@@ -131,12 +131,12 @@ const game = {
               wolfie.age++
               if(wolfie.age == 5){
                 alert('Your pet has gained a new form!!!!')
-                document.querySelector('.pet').src = 'js/images/GreyWolf.jpg'
+                document.querySelector('.pet').src = '/images/GreyWolf.jpg'
               }
 
               if(wolfie.age == 14){
                 alert('Your pet has hit its final form!!!!')
-                document.querySelector('.pet').src = 'js/images/finalwolf.jpg'
+                document.querySelector('.pet').src = '/images/finalwolf.jpg'
               }
           }, 6000)
         },
