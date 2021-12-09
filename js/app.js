@@ -131,12 +131,12 @@ const game = {
               wolfie.age++
               if(wolfie.age == 5){
                 alert('Your pet has gained a new form!!!!')
-                document.querySelector('.pet').src = "url('https://i.imgur.com/M7JkO3T.png')"
+                document.querySelector('.pet').src = "url('/Users/wolfe/sei-anemone/homeworks/Tamagotchi/js/images/imgbin-gray-wolf-drawing-cartoon-sketch-others-t8T5hfXYL3d9xgka0JjkyGsxZ.jpg')"
               }
 
               if(wolfie.age == 14){
                 alert('Your pet has hit its final form!!!!')
-                document.querySelector('.pet').src = "url('https://i.imgur.com/DPndHMJ.png')"
+                document.querySelector('.pet').src = "url('/Users/wolfe/sei-anemone/homeworks/Tamagotchi/js/images/pngwing.com copy.jpg')"
               }
           }, 6000)
         },
