@@ -131,12 +131,12 @@ const game = {
               wolfie.age++
               if(wolfie.age == 5){
                 alert('Your pet has gained a new form!!!!')
-                document.querySelector('.pet').src = "url('/Users/wolfe/sei-anemone/homeworks/Tamagotchi/js/images/GreyWolf.jpg')"
+                document.querySelector('.pet').src = "url('https://static.wikia.nocookie.net/twilightsaga/images/7/7f/Jacob-555644_429620497081182_285483444_n.jpg/revision/latest/top-crop/width/360/height/360?cb=20120728050833')"
               }
 
               if(wolfie.age == 14){
                 alert('Your pet has hit its final form!!!!')
-                document.querySelector('.pet').src = "url('/Users/wolfe/sei-anemone/homeworks/Tamagotchi/js/images/finalwolf.com copy.jpg')"
+                document.querySelector('.pet').src = "url('https://i.quotev.com/img/q/u/15/7/26/Twil.jpg')"
               }
           }, 6000)
         },
