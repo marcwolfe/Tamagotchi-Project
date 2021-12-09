@@ -131,12 +131,12 @@ const game = {
               wolfie.age++
               if(wolfie.age == 5){
                 alert('Your pet has gained a new form!!!!')
-                document.querySelector('.pet').src = "url('/Users/wolfe/sei-anemone/homeworks/Tamagotchi/js/images/Jacob.jpeg')"
+                document.querySelector('.pet').src = "url('https://i.imgur.com/ipMar1W.jpg')"
               }
 
               if(wolfie.age == 14){
                 alert('Your pet has hit its final form!!!!')
-                document.querySelector('.pet').src = "url('/Users/wolfe/sei-anemone/homeworks/Tamagotchi/js/images/Jacob Wolf.jpeg')"
+                document.querySelector('.pet').src = "url('https://i.imgur.com/rxfjYaZ.jpg')"
               }
           }, 6000)
         },
